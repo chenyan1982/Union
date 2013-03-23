@@ -1,4 +1,0 @@
-Union
-=====
-
-Andriod Develop Group
