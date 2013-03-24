@@ -1,0 +1,7 @@
+package snippet;
+
+public class Snippet {
+	Project has no default.properties file! Edit the project properties to set one.
+	
+}
+

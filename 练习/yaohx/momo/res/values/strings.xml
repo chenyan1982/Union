@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Login!</string>
+    <string name="app_name">MomoApp</string>
+    <string name="login">登陆</string>
+    <string name="prompt_userName">手机号码/邮箱地址/陌陌号</string>
+    <string name="prompt_PWD">请输入密码</string>
+    <string name="prompt_GetPWD">如果忘记密码请点击此处</string>
+    <string name="choice_countryCode">可选择国家区号</string>
+    <string name ="nihao">nihao</string>
+</resources>

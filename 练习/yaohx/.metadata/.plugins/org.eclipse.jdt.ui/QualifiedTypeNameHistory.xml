@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="hanson.Activity001.R.id"/>
+<fullyQualifiedTypeName name="android.content.res.ColorStateList"/>
+<fullyQualifiedTypeName name="android.R.layout"/>
+<fullyQualifiedTypeName name="hanson.Activity001.R.layout"/>
+<fullyQualifiedTypeName name="android.content.Intent"/>
+<fullyQualifiedTypeName name="android.net.Uri"/>
+<fullyQualifiedTypeName name="hanson.Activity03.R.id"/>
+<fullyQualifiedTypeName name="hanson.Activity03.R.layout"/>
+<fullyQualifiedTypeName name="hanson.Activity03.R"/>
+<fullyQualifiedTypeName name="hanson.Activity03.R.string"/>
+<fullyQualifiedTypeName name="hanson.Activity04.R"/>
+<fullyQualifiedTypeName name="android.R.string"/>
+<fullyQualifiedTypeName name="hanson.Activity04.R.layout"/>
+<fullyQualifiedTypeName name="hanson.Activity04.R.string"/>
+<fullyQualifiedTypeName name="hanson.Activity04.R.id"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="android.widget.RadioGroup.OnCheckedChangeListener"/>
+<fullyQualifiedTypeName name="hanson.Activity07Package.R"/>
+<fullyQualifiedTypeName name="hanson.Activity07Package.R.id"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="android.R.id"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.os.Handler"/>
+<fullyQualifiedTypeName name="hanson.HandleTestPack.R.id"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="hanson.HandleTestPack.HandleTestActivity.BtnOnClickListener"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+</qualifiedTypeNameHistroy>
