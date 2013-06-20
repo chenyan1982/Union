@@ -1,0 +1,46 @@
+import java.awt.*;
+
+public class Chequer extends Component {
+	//横向格数
+	private Integer verticalnum;
+	//纵向格数
+	private Integer horizontalnum;
+	//格子宽度
+	private Integer cellwidth;
+	
+	private class MyCanvas extends Canvas {
+	    public void Paint(Graphics g) {
+	    	System.out.println("开始画棋盘");
+	    }	  
+	}
+	
+	public Integer getHorizontalnum() {
+		return horizontalnum;
+	}
+	public void setHorizontalnum(Integer horizontalnum) {
+		this.horizontalnum = horizontalnum;
+	}	
+	public Integer getVerticalnum() {
+		return verticalnum;
+	}
+	public void setVerticalnum(Integer verticalnum) {
+		this.verticalnum = verticalnum;
+	}
+	
+	//初始化棋盘格数
+	{
+		horizontalnum = 4;
+		verticalnum = 4;
+		cellwidth = 10;
+	}
+	
+	public Chequer() {
+		
+	}
+	
+	public Chequer(Integer verticalnum,Integer horizontalnum) {
+		this.setVerticalnum(verticalnum);
+		this.setHorizontalnum(horizontalnum);
+	}
+	
+}

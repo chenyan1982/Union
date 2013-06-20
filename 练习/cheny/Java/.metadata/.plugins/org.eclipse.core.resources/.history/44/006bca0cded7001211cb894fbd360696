@@ -1,0 +1,50 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class Chequer extends Component {
+	//横向格数
+	private Integer verticalnum;
+	//纵向格数
+	private Integer horizontalnum;
+	//棋盘宽度
+	private Integer width;
+	//棋盘高度
+	private Integer height;
+	
+	public Integer getHorizontalnum() {
+		return horizontalnum;
+	}
+	public void setHorizontalnum(Integer horizontalnum) {
+		this.horizontalnum = horizontalnum;
+	}	
+	public Integer getVerticalnum() {
+		return verticalnum;
+	}
+	public void setVerticalnum(Integer verticalnum) {
+		this.verticalnum = verticalnum;
+	}
+	
+	//初始化棋盘格数
+	{
+		horizontalnum = 4;
+		verticalnum = 4;
+		height = width = 100;
+	}
+	
+	public Chequer() {
+		this.setPreferredSize(new Dimension(width,height));
+	}
+	
+	public Chequer(Integer verticalnum,Integer horizontalnum) {
+		this.setVerticalnum(verticalnum);
+		this.setHorizontalnum(horizontalnum);
+		this.setSize(width, height);
+	}
+	
+	public void paint(Graphics g) {
+		super.paint(g);
+		System.out.println("开始画棋盘");
+		//g.drawRect(10, 10, 100, 100);
+	}
+	
+}

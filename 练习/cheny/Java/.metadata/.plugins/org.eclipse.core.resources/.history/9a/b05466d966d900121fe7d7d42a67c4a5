@@ -1,0 +1,211 @@
+import java.lang.*;
+import java.util.*;
+import java.io.*;
+import org.yan.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.UIManager.LookAndFeelInfo;
+import javax.swing.border.Border;
+import javax.swing.plaf.*;
+
+import javax.imageio.ImageIO;
+
+public class HelloWord {
+
+	private JFrame jf; 
+	private JPanel jptop;
+	private JTextArea taleft; 
+
+	public HelloWord() {
+	}
+	
+	class OpenFileFilter extends javax.swing.filechooser.FileFilter {
+		public String getDescription() {
+			return "文本文件";
+		}
+		public boolean accept(File f) {
+			return f.getName().endsWith(".txt")? true: false;
+		}
+	}
+	
+
+
+	public void init() {
+//		Button btn = new Button();
+//		btn.setLabel("提交");
+//		Panel pnl = new Panel();
+//		pnl.add(btn);
+//		ScrollPane spn = new ScrollPane(ScrollPane.SCROLLBARS_ALWAYS);
+//		Frame frm = new Frame("窗口");
+//		frm.addWindowListener(new WindowAdapter() {
+//			public void windowClosing(WindowEvent e) {
+//				System.exit(0);
+//			}
+//		});
+//		frm.add(pnl, BorderLayout.NORTH);
+//		frm.add(spn);
+//		Menu m = new Menu("菜单");
+//		m.add(new MenuItem("打开"));
+//		m.add(new MenuItem("关闭", new MenuShortcut(KeyEvent.VK_A)));
+//		m.addSeparator();
+//		m.add(new MenuItem("结束"));
+//		MenuBar mb = new MenuBar();
+//		mb.add(m);
+//		Menu m2 = new Menu("系统");
+//		mb.add(m2);
+//		Menu m3 = new Menu("分辨率");
+//		m3.add(new MenuItem("1024x728"));
+//		m3.add(new MenuItem("600x800"));
+//		m2.add(m3);
+//		frm.setMenuBar(mb);
+//		frm.pack();
+//		frm.setVisible(true);
+		
+		
+		
+		jf = new JFrame("测试窗体");
+		jf.setBounds(222, 87, 800, 600);
+//		jf.addComponentListener(new ComponentAdapter(){
+//			public void componentMoved(ComponentEvent e) {
+//				System.out.println("x:" + e.getComponent().getBounds().x + ",y:" + e.getComponent().getBounds().y);
+//			}
+//		});
+		
+        JToolBar jtb = new JToolBar();
+        
+		
+		taleft = new JTextArea(20,7);
+		Border b = BorderFactory.createLineBorder(Color.BLACK);
+		taleft.setBorder(b);
+		JButton jbright = new JButton("右按钮");
+		JButton jbtop = new JButton("上按钮");
+		JButton jbbuttom = new JButton("下按钮");
+//		JColorChooser jccenter = new JColorChooser();
+		JPanel jpleft = new JPanel();
+		JPanel jpright = new JPanel();
+		JPanel jpcenter = new JPanel();
+		jptop = new JPanel();
+		JPanel jpbuttom  = new JPanel();
+		jpleft.add(taleft);
+		jpright.add(jbright);
+		jpcenter.setPreferredSize(new Dimension(300,300));
+		jpcenter.setBorder(BorderFactory.createEtchedBorder());
+//		jptop.add(jbtop);
+		jptop.setLayout(new FlowLayout());
+		jpbuttom.add(jbbuttom);
+		jf.add(jpleft,BorderLayout.WEST);
+		jf.add(jpright,BorderLayout.EAST);
+		jf.add(jptop,BorderLayout.NORTH);
+		jf.add(jpbuttom,BorderLayout.SOUTH);
+		jf.add(jpcenter,BorderLayout.CENTER);
+        jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);
+        
+
+        
+          
+        
+        Action confirm = new AbstractAction("确定",null) {
+        	public void actionPerformed(ActionEvent e) {
+        		System.out.println("确定");
+        	}
+        };
+        
+        Action choosecolor = new AbstractAction("选择颜色",null) {
+        	public void actionPerformed(ActionEvent e) {
+        		taleft.setText(JColorChooser.showDialog(jf, "请选择颜色", Color.BLUE).toString());
+        	}	
+        };
+        
+        Action choosefile = new AbstractAction("打开文件",null) {
+        	public void actionPerformed(ActionEvent e) {
+        		JFileChooser jfc = new JFileChooser(".");
+        		jfc.addChoosableFileFilter(new OpenFileFilter());
+        		if (JFileChooser.APPROVE_OPTION == jfc.showDialog(jptop, "确定")) {
+        			System.out.println(jfc.getSelectedFile());
+        		}
+        	}
+        };
+        
+        jtb.add(confirm);
+        jptop.setPreferredSize(new Dimension(50,50));
+        jbtop.setAction(confirm);
+        
+        jbright.setAction(choosecolor);
+        
+
+        jbbuttom.setAction(choosefile);
+//        Metal javax.swing.plaf.metal.MetalLookAndFeel
+//        Nimbus com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel
+//        CDE/Motif com.sun.java.swing.plaf.motif.MotifLookAndFeel
+//        Windows com.sun.java.swing.plaf.windows.WindowsLookAndFeel
+//        Windows Classic com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel
+        
+        try {
+			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedLookAndFeelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        SwingUtilities.updateComponentTreeUI(jf.getContentPane());                          
+        for (LookAndFeelInfo laf : UIManager.getInstalledLookAndFeels()) {
+        	System.out.println(laf);
+        }
+        jf.pack();
+		jf.setVisible(true);		
+	
+	}
+
+	public static void main(String[] args) {
+		Map<String, String> env = System.getenv();
+		for (String s : env.keySet()) {
+			System.out.println("key:" + s + "value:" + env.get(s));
+		}
+
+		final String s_tmpfile_path = env.get("TEMP");
+		String s_path = env.get("Path");
+		// 搜索是否有包含java的tools
+		if (s_path.indexOf("tools.jar") < 0) {
+			if (s_path.lastIndexOf(";") > 0)
+				s_path = s_path.copyValueOf(s_path.toCharArray(), 0,
+						s_path.lastIndexOf(";"));
+			s_path = s_path
+					+ ";C:\\Program Files\\Java\\jdk1.6.0_45\\lib\\tools.jar;";
+		}
+
+		File f = new File(s_tmpfile_path);
+
+		for (String s : f.list()) {
+			System.out.println(s);
+		}
+
+		System.out.println(f.list().length);
+
+		for (File s : f.listFiles()) {
+			try {
+				s.delete();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+				continue;
+			}
+		}
+
+		for (String s : ImageIO.getReaderFormatNames()) {
+			System.out.println(s);
+		}
+
+		
+		new HelloWord().init();
+
+	}
+
+}
